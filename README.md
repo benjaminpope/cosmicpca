@@ -1,7 +1,10 @@
-# Robust PCA
-C++ implementation of Robust Orthonormal Subspace Learning using the Armadillo 
-linear algebra library. A Python wrapper for interfacing with the [HyperSpy](http://hyperspy.org/)
-multidimensional analysis toolbox is also included.
+# Cosmic PCA
+[![Licence](http://img.shields.io/badge/license-GPLv3-blue.svg?style=flat)](http://www.gnu.org/licenses/gpl-3.0.html)
+
+The Transiting Exoplanet Survey Satellite (TESS) is expected to suffer from unusually bad cosmic ray contamination, thanks to its very deep pixels in comparison to Kepler. We want to see if we can solve this problem, and related problems in observational astronomy.
+
+This is a fork of https://github.com/tjof2/robustpca, a C++ implementation of Robust Orthonormal Subspace Learning using the Armadillo 
+linear algebra library, available under a GNU GPL v3.0 license, as accordingly is this code.
 
 ## Contents
 
@@ -11,16 +14,13 @@ multidimensional analysis toolbox is also included.
 
 ## Description
 
-This is a C++ implementation of the Robust Orthonormal Subspace Learning (ROSL) algorithm [1].
-ROSL solves the robust PCA problem, recovering a low-rank matrix **A**
-from the corrupted observation **X** according to:
+We want to use [Robust PCA](https://statweb.stanford.edu/~candes/papers/RobustPCA.pdf) to separate a stream of TESS images into a sparse component (which hopefully tracks cosmic rays) and a low-rank component (which hopefully recovers the star field).
 
-<img src="http://i.imgur.com/76Wse2e.png" width="360">
-
-where **E** is the sparse error term. ROSL incorporates a memory-efficient method for recovering **A** from a sub-sample
-of the matrix **X**.
+The Robust PCA implementation is taken from Tom Furnival's C++ implementation of the Robust Orthonormal Subspace Learning (ROSL) algorithm [1].
 
 [1] X Shu, F Porikli, N Ahuja. (2014) "Robust Orthonormal Subspace Learning: Efficient Recovery of Corrupted Low-rank Matrices". ([paper](http://dx.doi.org/10.1109/CVPR.2014.495))<br/>
+
+The cosmic ray generator is from the TESS Science Team [SPyFFi package](https://github.com/TESScience/SPyFFI). 
 
 ## Installation
 
@@ -30,6 +30,10 @@ This library makes use of the **[Armadillo](http://arma.sourceforge.net)** C++ l
 which needs to be installed first. It is recommended that you use a high-speed replacement for
 LAPACK and BLAS such as OpenBLAS, MKL or ACML; more information can be found in the [Armadillo
 FAQs](http://arma.sourceforge.net/faq.html#dependencies).
+
+Also install SPyFFI from source at https://github.com/TESScience/SPyFFI or with
+
+	pip install SPyFFI
 
 **Building from source**
 
