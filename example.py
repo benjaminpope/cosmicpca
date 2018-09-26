@@ -2,8 +2,8 @@ import os, sys, warnings
 import scipy.io
 import numpy as np
 import pyrosl
-from hyperspy import signals
-import hyperspy.hspy as hs
+# from hyperspy import signals
+# import hyperspy.hspy as hs
 
 """
 

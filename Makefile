@@ -8,7 +8,7 @@ CXXFLAGS = -O3 -fPIC -Wall -std=c++11 -march=native
 LDFLAGS = -shared
 
 # Link to BLAS (or replacement), LAPACK, and Armadillo
-LFLAGS = -lopenblas -llapack -larmadillo
+LFLAGS = -lblas -llapack -larmadillo
 
 #####################################
 # No need to modify below this line #
