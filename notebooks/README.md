@@ -1,3 +1,3 @@
 ## notebooks
 
-Notebooks demonstrating robust PCA go here.
+`tess_cosmics.ipynb`: This notebook demonstrates the removal of TESS cosmic rays using Robust PCA. 
