@@ -24,9 +24,7 @@ The cosmic ray generator is from the TESS Science Team [SPyFFi package](https://
 **Dependencies**
 
 This library makes use of the **[Armadillo](http://arma.sourceforge.net)** C++ linear algebra library, 
-which needs to be installed first. It is recommended that you use a high-speed replacement for
-LAPACK and BLAS such as OpenBLAS, MKL or ACML; more information can be found in the [Armadillo
-FAQs](http://arma.sourceforge.net/faq.html#dependencies).
+which needs to be installed first. 
 
 Also install SPyFFI from source at https://github.com/TESScience/SPyFFI or with
 
@@ -57,10 +55,12 @@ example_rosl = pyrosl.ROSL(
     rank = 5,
     reg = 0.1
 )
-example_rosl.fit_transform(X)
+loadings, components, E = full_rosl._fit(X)
+loadings = loadings[:, :full_rosl.rank_]
 
-A = example_rosl.model_
-E = example_rosl.residuals_
+model = np.dot(loadings, full_rosl.components_)
+sparse = E.reshape(np.shape(dat)) # dat is input data in (ncad, nx, ny) format
+lowrank = model.reshape(np.shape(dat))
 
 ```
 
