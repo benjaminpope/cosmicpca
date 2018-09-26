@@ -3,8 +3,7 @@
 
 The Transiting Exoplanet Survey Satellite (TESS) is expected to suffer from unusually bad cosmic ray contamination, thanks to its very deep pixels in comparison to Kepler. We want to see if we can solve this problem, and related problems in observational astronomy. Here, we use [Robust PCA](https://statweb.stanford.edu/~candes/papers/RobustPCA.pdf) (RPCA), which decomposes data into sparse and low-rank components, to separate out cosmic rays from stellar variability. To my [knowledge](https://ui.adsabs.harvard.edu/#search/q=abs%3A%22robust%20PCA%22%20database%3Aastronomy&sort=date%20desc%2C%20bibcode%20desc&p_=0), this technique has not so far been used for this purpose in astronomy, though in adjacent fields it has been used for [exoplanet direct imaging](https://ui.adsabs.harvard.edu/#abs/2016A&A...589A..54G/abstract), [baryons in haloes](https://ui.adsabs.harvard.edu/#abs/2014MNRAS.440..240D/abstract) and [geophysics](https://ui.adsabs.harvard.edu/#abs/2012GeoJI.190.1423S/abstract). 
 
-This is a fork of https://github.com/tjof2/robustpca, a C++ implementation of Robust Orthonormal Subspace Learning using the Armadillo 
-linear algebra library, available under a GNU GPL v3.0 license, as accordingly is this code.
+This is a fork of https://github.com/tjof2/robustpca, a C++ implementation of Robust Orthonormal Subspace Learning, available under a GNU GPL v3.0 license, as accordingly is this code.
 
 ## Contents
 
