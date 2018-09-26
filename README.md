@@ -1,7 +1,7 @@
 # Cosmic PCA
 [![Licence](http://img.shields.io/badge/license-GPLv3-blue.svg?style=flat)](http://www.gnu.org/licenses/gpl-3.0.html)
 
-The Transiting Exoplanet Survey Satellite (TESS) is expected to suffer from unusually bad cosmic ray contamination, thanks to its very deep pixels in comparison to Kepler. We want to see if we can solve this problem, and related problems in observational astronomy.
+The Transiting Exoplanet Survey Satellite (TESS) is expected to suffer from unusually bad cosmic ray contamination, thanks to its very deep pixels in comparison to Kepler. We want to see if we can solve this problem, and related problems in observational astronomy. Here, we use [Robust PCA](https://statweb.stanford.edu/~candes/papers/RobustPCA.pdf) (RPCA), which decomposes data into sparse and low-rank components, to separate out cosmic rays from stellar variability. To my [knowledge](https://ui.adsabs.harvard.edu/#search/q=abs%3A%22robust%20PCA%22%20database%3Aastronomy&sort=date%20desc%2C%20bibcode%20desc&p_=0), this technique has not so far been used for this purpose in astronomy, though in adjacent fields it has been used for [exoplanet direct imaging](https://ui.adsabs.harvard.edu/#abs/2016A&A...589A..54G/abstract), baryons in haloes (https://ui.adsabs.harvard.edu/#abs/2014MNRAS.440..240D/abstract) and geophysics (https://ui.adsabs.harvard.edu/#abs/2012GeoJI.190.1423S/abstract). 
 
 This is a fork of https://github.com/tjof2/robustpca, a C++ implementation of Robust Orthonormal Subspace Learning using the Armadillo 
 linear algebra library, available under a GNU GPL v3.0 license, as accordingly is this code.
@@ -14,11 +14,9 @@ linear algebra library, available under a GNU GPL v3.0 license, as accordingly i
 
 ## Description
 
-We want to use [Robust PCA](https://statweb.stanford.edu/~candes/papers/RobustPCA.pdf) to separate a stream of TESS images into a sparse component (which hopefully tracks cosmic rays) and a low-rank component (which hopefully recovers the star field).
+We want to use Robust PCA to separate a stream of TESS images into a sparse component (which hopefully tracks cosmic rays) and a low-rank component (which hopefully recovers the star field).
 
-The Robust PCA implementation is taken from Tom Furnival's C++ implementation of the Robust Orthonormal Subspace Learning (ROSL) algorithm [1].
-
-[1] X Shu, F Porikli, N Ahuja. (2014) "Robust Orthonormal Subspace Learning: Efficient Recovery of Corrupted Low-rank Matrices". ([paper](http://dx.doi.org/10.1109/CVPR.2014.495))<br/>
+The Robust PCA implementation is taken from Tom Furnival's C++ implementation of the [Robust Orthonormal Subspace Learning](http://dx.doi.org/10.1109/CVPR.2014.495) (ROSL) algorithm.
 
 The cosmic ray generator is from the TESS Science Team [SPyFFi package](https://github.com/TESScience/SPyFFI). 
 
