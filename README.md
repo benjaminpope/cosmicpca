@@ -32,13 +32,7 @@ Also install SPyFFI from source at https://github.com/TESScience/SPyFFI or with
 
 **Building from source**
 
-To build the library, unpack the source and `cd` into the unpacked directory, then type `make`:
-
-```bash
-$ tar -xzf robustpca.tar.gz
-$ cd rosl
-$ make
-```
+To build the library, unpack the source and `cd` into the unpacked directory, then type `make`. 
 
 This will generate a C++ library called `librosl.so`, which is called by the Python module `pyrosl`.
 
